@@ -12,7 +12,7 @@ sudo apt-get install git
 ```
 * Windows - загружаем последнюю версию Git с сайта https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-    Установливаем с настройками по умолчанию.
+    Установливаем по умолчанию.
 
 ## 3. Настройка
 
