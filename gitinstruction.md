@@ -72,13 +72,11 @@ git add gitinstruction.md
 ```
 Если вы снова выполните команду **git status**, то увидите, что файл gitinstruction.md теперь отслеживаемый и добавлен в индекс:
 ```
+$ git status
 On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
         modified:   gitinstruction.md
-
-no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ## 7. Фиксация изменений 
@@ -95,5 +93,21 @@ $ git commit -m  "Initial commit"
 [master abb2ec7] Initial commit
  1 file changed, 2 insertions(+), 0 deletions(-)
 ```
-Флажок -m задаст commit message - комментарий разработчика. Он необходим для описания закоммиченных изменений. Так же, на какую ветку вы выполнили коммит (master), какая контрольная сумма у этого коммита (463dc4f), сколько файлов было изменено, а также статистику по добавленным/удалённым строкам в этом коммите.
+Флажок -m задаст commit message - комментарий разработчика. Он необходим для описания закоммиченных изменений. Так же, на какую ветку вы выполнили коммит (master), какая контрольная сумма у этого коммита (abb2ec7), сколько файлов было изменено, а также статистику по добавленным/удалённым строкам в этом коммите.
+
+## 8. Как посмотреть коммиты
+
+Для просмотра все выполненных фиксаций можно воспользоваться историей коммитов. Она содержит сведения о каждом проведенном коммите проекта. Запросить ее можно при помощи команды:
+```
+git log
+```
+```
+$ git log
+commit 4016abbe5178567e388516c8c111f9919a33cdfa
+Author: Yelnur <yelnurzhumashev@gmail.com>
+Date:   Wed Dec 21 14:19:56 2022 +0600
+
+    Initial commit
+```
+В ней содержиться вся информация о каждом отдельном коммите, с указанием его коммита, автора, списка изменений и даты, когда они были сделаны.
 
