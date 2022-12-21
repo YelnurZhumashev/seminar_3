@@ -43,13 +43,42 @@ Initialized empty Git repository in /home/user/Desktop/instuction_git/.git/
 
 ## 5. Определение состояния 
 
-status - это еще одна важнейшая команда, которая показывает информацию о текущем состоянии репозитория: актуальна ли информация на нём, нет ли чего-то нового, что поменялось, и так далее. Запуск git status на нашем свежесозданном репозитории должен выдать:
+status - это еще одна важнейшая команда, которая показывает информацию о текущем состоянии репозитория: актуальна ли информация на нём, нет ли чего-то нового, что поменялось, и так далее. Запуск **git status** на нашем свежесозданном репозитории должен выдать:
 ```
 $ git status
 On branch master
-Initial commit
-Untracked files:
-(use "git add ..." to include in what will be committed)
-gitinstruction.md
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
 ```
-Сообщение говорит о том, что файл hello.txt неотслеживаемый. Это значит, что файл новый и система еще не знает, нужно ли следить за изменениями в файле или его можно просто игнорировать. Для того, чтобы начать отслеживать новый файл, нужно его специальным образом объявить.
+Это означает, что у вас чистый рабочий каталог, другими словами - в нем нет отслеживаемых измененных файлов.
+
+Преподложим, вы добавили в свой проект новый файл - gitinstruction.md. Если этого файла раньше не было, и вы выполните **git status**, вы увидите свой неотслеживаемый файл вот так:
+```
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    README
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+Сообщение говорит о том, что файл gitinstruction.md неотслеживаемый. Это значит, что файл новый и система еще не знает, нужно ли следить за изменениями в файле или его можно просто игнорировать. Для того, чтобы начать отслеживать новый файл, нужно его специальным образом объявить.
+
+## 6. Отслеживание файлов
+
+Для того чтобы начать отслеживать (добавить под версионный контроль) новый файл, используется команда **git add**. Чтобы начать отслеживание файла gitinstruction.md, вы можете выполнить следующее:
+```
+git add gitinstruction.md
+```
+Если вы снова выполните команду **git status**, то увидите, что файл gitinstruction.md теперь отслеживаемый и добавлен в индекс:
+```
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+
+    new file:   gitinstruction.md
+```
